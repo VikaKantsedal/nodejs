@@ -36,6 +36,11 @@ router.post('/adduser', function(req, res) {
   var userName = req.body.username;
   var userEmail = req.body.useremail;
 
+  if (userName !== "Tom") {
+    res.send("Your name is Tom. It's a trap!");
+    return;
+  }
+
   // Set our collection
   var collection = db.get('usercollection');
 
